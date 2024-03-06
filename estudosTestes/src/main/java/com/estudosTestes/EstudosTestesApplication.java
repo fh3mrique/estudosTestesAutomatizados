@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class EstudosTestesApplication {
 
     public static void main(String[] args) {
-        //TIPOS DE TESTE
+        //TESTE DE UNIDADE
         SpringApplication.run(EstudosTestesApplication.class, args);
     }
 }
