@@ -1,6 +1,5 @@
-package com.estudosTestes.web;
+package com.estudosTestes.domain;
 
-import com.estudosTestes.domain.Planet;
 import org.springframework.stereotype.Service;
 
 @Service

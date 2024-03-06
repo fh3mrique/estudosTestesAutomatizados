@@ -1,7 +1,7 @@
 package com.estudosTestes.web;
 
 import com.estudosTestes.domain.Planet;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.estudosTestes.domain.PlanetService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
