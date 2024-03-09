@@ -1,11 +1,15 @@
 package com.estudosTestes.domain;
 /*Import estático para facilitar os teste*/
 
+import static com.estudosTestes.common.PlanetConstants.INVALID_PLANET;
 import static com.estudosTestes.common.PlanetConstants.PLANET;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.Mockito.when;
 
+import com.estudosTestes.common.PlanetConstants;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -45,5 +49,14 @@ public class PlanetServiceTest {
         // está de acordo com o esperado, por meio de afirmações ou verificações
         // de condições específicas
         assertThat(sut).isEqualTo(PLANET);
+    }
+
+    @Test
+    public void createPlanet_WithInvalidData_ThrowsException() {
+        Mockito.when(planetRepository.save(PlanetConstants.INVALID_PLANET))
+                .thenThrow(RuntimeException.class);
+
+        assertThatThrownBy(() -> planetService.create(INVALID_PLANET))
+                .isInstanceOf(RuntimeException.class);
     }
 }
